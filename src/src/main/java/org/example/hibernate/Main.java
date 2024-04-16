@@ -1,5 +1,6 @@
 package org.example.hibernate;
 
+import org.example.hibernate.dao.Account;
 import org.example.hibernate.dao.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,6 +14,7 @@ public class Main {
         SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Account.class)
                 .buildSessionFactory();
 
         // used to iteract with db
@@ -24,7 +26,6 @@ public class Main {
 
         // save to db
         session.merge(honza);
-        transaction.commit();
 
         // retrive data
         List<User> fromUser = session.createQuery("FROM User", User.class).list();
@@ -33,6 +34,11 @@ public class Main {
         // select * from User where id = 2
         User user = session.get(User.class, 2);
         System.out.println(user);
+
+        Account account = new Account(200, 1);
+        session.merge(account);
+        transaction.commit();
+
 
         session.close();
         sessionFactory.close();
