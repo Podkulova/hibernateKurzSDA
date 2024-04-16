@@ -31,14 +31,24 @@ public class Main {
         List<User> fromUser = session.createQuery("FROM User", User.class).list();
         fromUser.forEach(System.out::println);
 
-        // select * from User where id = 2
-        User user = session.get(User.class, 2);
-        System.out.println(user);
+        // select * from User where id = 1
+        User user = session.get(User.class, 1);
 
-        Account account = new Account(200, 1);
-        session.merge(account);
+        Account account = session.get(Account.class, 1);
+
+        if(account == null) {
+            Account account1 = new Account(200, user);
+            session.merge(account1);
+        }
+
         transaction.commit();
 
+        session.createQuery("FROM Account", Account.class)
+                .list()
+                .forEach(System.out::println);
+
+        User user1 = session.get(User.class, 1);
+        System.out.println(user1);
 
         session.close();
         sessionFactory.close();

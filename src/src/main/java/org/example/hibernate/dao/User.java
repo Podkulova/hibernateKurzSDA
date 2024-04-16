@@ -10,7 +10,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @Entity
-@ToString
+@ToString(exclude = "account")
 public class User {
 
     public User(String name, String lastName) {
@@ -26,4 +26,7 @@ public class User {
     private String name;
 
     private String lastName;
+
+    @OneToOne(mappedBy = "owner", fetch = FetchType.EAGER)
+    private Account account;
 }
