@@ -1,4 +1,4 @@
-package org.example;
+package org.example.jdbc;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;

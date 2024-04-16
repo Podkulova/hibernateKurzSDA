@@ -1,4 +1,4 @@
-package org.example;
+package org.example.jdbc;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import lombok.RequiredArgsConstructor;

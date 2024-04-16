@@ -1,4 +1,4 @@
-package org.example;
+package org.example.jdbc;
 
 import java.sql.SQLException;
 import java.util.List;
