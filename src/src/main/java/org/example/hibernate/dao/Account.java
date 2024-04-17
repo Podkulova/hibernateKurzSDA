@@ -22,7 +22,7 @@ public class Account {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id")
     private User owner;
 }
