@@ -19,6 +19,7 @@ public class Main {
         Teacher teacher = new Teacher();
         teacher.setId(1);
         teacher.setType("Math");
+        teacher.setPerson(new Person("Václav", "Malý"));
         session.persist(teacher); // uložení místo merge
 
         transaction.commit();

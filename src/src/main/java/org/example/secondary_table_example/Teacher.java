@@ -16,8 +16,8 @@ public class Teacher {
     @Id
     private int id;
 
-/*    @Embedded
-    private Person person;*/
+    @Embedded // Aby se mi nezaložila samostatná tabulka
+    private Person person;
 
     @Column(table = "specialization")
     private String type;
