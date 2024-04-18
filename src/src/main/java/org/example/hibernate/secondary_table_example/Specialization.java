@@ -1,4 +1,4 @@
-package org.example.secondary_table_example;
+package org.example.hibernate.secondary_table_example;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
