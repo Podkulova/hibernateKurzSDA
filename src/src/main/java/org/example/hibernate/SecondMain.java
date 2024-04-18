@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 public class SecondMain {
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration()
-                .configure("hibernate.cfg.xml")
+                .configure("test/hibernate.cfg.xml")
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Account.class)
                 .addAnnotatedClass(Order.class)

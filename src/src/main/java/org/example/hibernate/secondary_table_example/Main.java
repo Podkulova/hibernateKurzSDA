@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
             SessionFactory sessionFactory = new Configuration()
-                    .configure("hibernate.cfg.xml")
+                    .configure("test/hibernate.cfg.xml")
                     .addAnnotatedClass(Teacher.class)
                     .addAnnotatedClass(Specialization.class)
                     .buildSessionFactory();
