@@ -2,6 +2,7 @@ package org.example.hibernate.hql;
 
 import org.example.hibernate.hql.entity.Customer;
 import org.example.hibernate.hql.entity.Order;
+import org.example.hibernate.hql.entity.OrderItem;
 import org.example.hibernate.hql.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -18,6 +19,7 @@ public class HibernateUtil {
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Product.class)
                 .addAnnotatedClass(Order.class)
+                .addAnnotatedClass(OrderItem.class)
                 .buildSessionFactory();
     }
 

@@ -5,6 +5,8 @@ import org.example.hibernate.hql.dao.ProductDao;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProductTest {
@@ -17,6 +19,12 @@ public class ProductTest {
     public  void createProduct() {
         Product product = dao.saveProduct("MacBook", 50000, 10);
         assertTrue(product.getId() != 0);
+    }
+
+    @Test
+    public void testLoadByIds(){
+        List<Product> load = dao.load(Product.class, 3, 4, 5);
+        assertTrue(load.isEmpty());
     }
 
 }

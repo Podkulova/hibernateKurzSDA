@@ -22,6 +22,6 @@ public class Order extends BaseEntity {
     private Customer customer;
 
     @OneToMany
-    private List<Product> products;
+    private List<OrderItem> items;
 
 }
