@@ -1,9 +1,5 @@
-package org.example.hibernate.hql;
+package org.example.hibernate.benefits_of_abstract;
 
-import org.example.hibernate.hql.entity.Customer;
-import org.example.hibernate.hql.entity.Order;
-import org.example.hibernate.hql.entity.OrderItem;
-import org.example.hibernate.hql.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,10 +12,7 @@ public class HibernateUtil {
     public HibernateUtil() {
         sessionFactory = new Configuration()
                 .configure(getconfigFile())
-                .addAnnotatedClass(Customer.class)
-                .addAnnotatedClass(Product.class)
-                .addAnnotatedClass(Order.class)
-                .addAnnotatedClass(OrderItem.class)
+                .addAnnotatedClass(User2.class)
                 .buildSessionFactory();
     }
 
